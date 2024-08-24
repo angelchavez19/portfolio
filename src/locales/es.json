@@ -1,5 +1,36 @@
 {
     "layout": {
         "description": "¡Hola! Soy Angel Chávez, desarrollador web con un año de experiencia creando proyectos desafiantes y eficientes. Me apasiona el desarrollo web y estoy emocionado por seguir creciendo en este campo."
+    },
+    "header": {
+        "icon": "Página Inicial",
+        "links": [
+            {
+                "href": "/es#home",
+                "text": "Inicio"
+            },
+            {
+                "href": "/es#about",
+                "text": "Sobre Mí"
+            },
+            {
+                "href": "/es#skills",
+                "text": "Habilidades"
+            },
+            {
+                "href": "/es#services",
+                "text": "Servicios"
+            },
+            {
+                "href": "/es/projects",
+                "text": "Proyectos"
+            },
+            {
+                "href": "/es/posts",
+                "text": "Blog"
+            }
+        ],
+        "contact_me": "Contáctame",
+        "expanded_menu": "Abrir Navegación"
     }
 }
