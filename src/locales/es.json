@@ -6,27 +6,27 @@
         "icon": "Página Inicial",
         "links": [
             {
-                "href": "/es#home",
+                "href": "/#home",
                 "text": "Inicio"
             },
             {
-                "href": "/es#about",
+                "href": "/#about",
                 "text": "Sobre Mí"
             },
             {
-                "href": "/es#skills",
+                "href": "/#skills",
                 "text": "Habilidades"
             },
             {
-                "href": "/es#services",
+                "href": "/#services",
                 "text": "Servicios"
             },
             {
-                "href": "/es/projects",
+                "href": "/projects",
                 "text": "Proyectos"
             },
             {
-                "href": "/es/posts",
+                "href": "/posts",
                 "text": "Blog"
             }
         ],
