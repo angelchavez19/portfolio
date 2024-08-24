@@ -1,6 +1,6 @@
 {
     "layout": {
-        "description": "Hi! I'm Angel Chávez, a web developer with one year of experience creating challenging and efficient projects. I'm passionate about web development and excited to keep growing in this field."
+        "description": "Hi! I'm Angel Chávez, a web developer with three years of experience creating challenging and efficient projects. I'm passionate about web development and excited to keep growing in this field."
     },
     "header": {
         "icon": "Initial Page",
@@ -65,6 +65,22 @@
                     "My approach and work style focus on developing efficient and easy-to-read projects.",
                     "I'm excited to continue growing and facing new challenges in the world of web development!"
                 ]
+            },
+            "skills": {
+                "section": "Skills",
+                "soft_skill": "Habilidades Blandas",
+                "soft_skills": [
+                    "Gestión del Tiempo",
+                    "Resiliencia",
+                    "Innovación y creatividad",
+                    "Orientación al cliente",
+                    "Adaptabilidad",
+                    "Ética de trabajo",
+                    "Motivación",
+                    "Confianza",
+                    "Trabajo en equipo"
+                ],
+                "technical_skill": "Tecnologias que Utilizo"
             }
         }
     },

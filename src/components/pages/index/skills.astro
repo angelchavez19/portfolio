@@ -1,0 +1,129 @@
+---
+interface Props {
+    lang: string
+}
+
+const props = Astro.props
+
+import EN from '~/locales/en.json'
+import ES from '~/locales/es.json'
+const skills = props.lang === 'es' ? ES.main.index.skills : EN.main.index.skills
+
+import { technicalSkills } from '~/locales/index/skills'
+import Section from '~/components/section.astro'
+---
+
+<Section class="Skills" id="skills" title={skills.section}>
+  <h3 class="Skills-subsection">{skills.soft_skill}</h3>
+  <ul class="Skills-softskills">
+    {skills.soft_skills.map((item) => <li>{item}</li>)}
+  </ul>
+  <h3 class="Skills-subsection">{skills.technical_skill}</h3>
+  <div class="Skills-technologies">
+    {
+      technicalSkills.map((item) => (
+        <div class={`Skills-${item.class}`}>
+          <div class="Subtitle">
+            <h4>{ props.lang === 'es' ? item.subtitle.es : item.subtitle.en }</h4>
+          </div>
+          <div class="Skills-icons">
+            {
+              item.skills.map((icon) => (
+                <div class="Skills-icon" data-title={icon.title}>
+                  <icon.icon />
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</Section>
+
+<style>
+  .Skills-subsection {
+    color: #14e956;
+    font-size: 1.3rem;
+  }
+
+  .Skills-softskills {
+    background-color: #272727;
+    width: calc(100% - 2rem);
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    padding: 1rem;
+    gap: 0.5rem;
+  }
+
+  .Skills-softskills li {
+    font-size: 1.2rem;
+    list-style: none;
+    color: #fff;
+    text-align: center;
+  }
+
+  .Skills-technologies {
+    width: 100%;
+    display: grid;
+    grid-template-areas: "a" "b" "c";
+    gap: 1rem;
+  }
+
+  .Skills-frontend {
+    grid-area: a;
+  }
+
+  .Skills-backend {
+    grid-area: b;
+  }
+
+  .Skills-tools {
+    grid-area: c;
+  }
+
+  .Skills-frontend,
+  .Skills-backend,
+  .Skills-tools {
+    background-color: #272727;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 20px;
+    padding: 1rem;
+    width: calc(100% - 2rem);
+    gap: 1rem;
+  }
+
+  .Skills-icons {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 1rem;
+  }
+
+  .Skills-icon,
+  .Skills-icon svg {
+    width: 50px;
+    height: 50px;
+  }
+
+  @media (min-width: 650px) {
+    .Skills-softskills {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (min-width: 900px) {
+    .Skills-softskills {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .Skills-technologies {
+      grid-template-areas: "a b" "c c";
+    }
+  }
+</style>

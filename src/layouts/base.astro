@@ -83,4 +83,49 @@ body {
 .Button {
     background-color: #14e956;
 }
+
+.Subtitle {
+    border-radius: 40px;
+    width: max-content;
+    outline: 2px solid #14e956;
+    padding: 0.5rem 0.8rem;
+    max-width: calc(100vw - 1.6rem);
+}
+
+.Subtitle h4,
+    .Subtitle h3 {
+    font-size: 1.2rem;
+    text-align: center;
+    color: #fff;
+    line-height: 1.5;
+}
+
+[data-title]:hover:after {
+    opacity: 1;
+    transition: all 0.1s ease 0.5s;
+    display: block;
+}
+
+[data-title]:after {
+    content: attr(data-title);
+    background-color: #14e956;
+    color: #272727;
+    font-size: 14px;
+    font-family: "Inter", sans-serif;
+    position: absolute;
+    padding: 3px 5px;
+    bottom: -1.6em;
+    left: 0;
+    white-space: nowrap;
+    font-weight: 900;
+    opacity: 0;
+    border: 1px solid #ffffff;
+    z-index: 99999;
+    display: none;
+    border-radius: 6px;
+}
+
+[data-title] {
+    position: relative;
+}
 </style>
