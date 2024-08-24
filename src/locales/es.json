@@ -81,6 +81,26 @@
                     "Trabajo en equipo"
                 ],
                 "technical_skill": "Tecnologias que Utilizo"
+            },
+            "services": {
+                "section": "Servicios",
+                "services": [
+                    {
+                        "title": "Desarrollo de aplicaciones web",
+                        "content": "Desarrollo de aplicaciones web a medida para tu negocio o emprendimiento.",
+                        "image": "/service1.webp"
+                    },
+                    {
+                        "title": "Desarrollo de sitios web estáticos",
+                        "content": "Desarrollo de sitios web estáticos elegantes y eficientes utilizando generadores de sitios estáticos, asegurando una experiencia de usuario fluida y de alta calidad.",
+                        "image": "/service2.webp"
+                    },
+                    {
+                        "title": "Mantenimiento de sitios web",
+                        "content": "Mantenimiento para sitios web existentes, incluyendo actualizaciones de contenido, optimización de rendimiento y corrección de errores y seguridad.",
+                        "image": "/service3.webp"
+                    }
+                ]
             }
         }
     },
