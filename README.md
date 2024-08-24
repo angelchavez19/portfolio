@@ -1,54 +1,33 @@
-# Astro Starter Kit: Basics
+# Angel Chávez's Portfolio
 
-```sh
-npm create astro@latest -- --template basics
-```
+Welcome to my portfolio repository! This is a collection of my work as a developer, showcasing various projects that highlight my skills in web development, software engineering, and more. Here, you'll find details about my projects, the technologies I use, and my approach to building digital experiences.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## Table of Contents
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- [About](#about)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Contact](#contact)
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## About
 
-## 🚀 Project Structure
+This portfolio showcases my work as a full-stack developer. It includes projects ranging from web applications and static websites to full-fledged APIs and server-side rendering solutions. My focus is on building performant, accessible, and visually appealing applications.
 
-Inside of your Astro project, you'll see the following folders and files:
+## Features
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+- **Static Site Generation**: The portfolio is built using Astro, which generates static files for fast performance and easy deployment.
+- **Responsive Design**: The site is fully responsive and works well on both mobile and desktop devices.
+- **API Integration for Contact Form**: The portfolio integrates with an API to handle form submissions and send emails, making it easy for visitors to contact me.
+- **SEO Optimized**: The portfolio is optimized for search engines to improve visibility and reach.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Technologies Used
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+- **Frontend:** Astro
+- **Version Control:** Git, GitHub
+- **Deployment:** Vercel
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Contact
 
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Angel Chávez - [infoangelchavez@gmail.com](mailto:infoangelchavez@gmail.com)  
+LinkedIn: [linkedin.com/in/angel-chávez](https://www.linkedin.com/in/angel-ch%C3%A1vez/)  
+GitHub: [github.com/angelchavez19](https://github.com/angelchavez19)
