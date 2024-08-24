@@ -1,0 +1,27 @@
+<main class="Main">
+  <slot />
+</main>
+
+<style is:global>
+  .Main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .Main section {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    min-width: 300px;
+    width: calc(100% - 40px);
+    max-width: 1200px;
+    gap: 1.5rem;
+  }
+
+  .Main section:first-child {
+    padding-top: 110px;
+  }
+</style>
