@@ -5,8 +5,8 @@ interface Props {
 
 const props = Astro.props
 
-import EN from '../locales/en.json'
-import ES from '../locales/es.json'
+import EN from '~/locales/en.json'
+import ES from '~/locales/es.json'
 const header = props.lang === 'es' ? ES.header : EN.header
 
 import { getRelativeLocaleUrl } from 'astro:i18n'
@@ -95,7 +95,7 @@ import Logo from "~/components/icon/logo.astro"
     justify-content: center;
     padding: 1.25rem 0;
     width: 100%;
-    background-color: #050810d0;
+    background-color: #05081046;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     z-index: 10000;

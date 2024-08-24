@@ -1,0 +1,68 @@
+---
+interface Props {
+  lang: string
+}
+
+const props = Astro.props;
+
+import EN from '~/locales/en.json'
+import ES from '~/locales/es.json'
+
+const footer = props.lang === 'es' ? ES.footer : EN.footer
+---
+
+<div class="Footer-container">
+  <footer class="Footer">
+    <p class="Footer-name">Angel Chávez</p>
+    <p class="Footer-message">{footer.footer_message}</p>
+    <hr />
+    <p class="Footer-copyright">{footer.footer_copyright}</p>
+  </footer>
+</div>
+
+<style>
+  .Footer-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .Footer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    background-color: #272727;
+    margin-top: 2.5rem;
+    width: 100%;
+    max-width: 1200px;
+    padding: 1rem;
+  }
+
+  .Footer-name,
+  .Footer-message {
+    margin-left: 0.7rem;
+  }
+
+  .Footer-name {
+    color: #14e956;
+    font-size: 1.3rem;
+  }
+
+  .Footer-message {
+    color: #fff;
+    font-size: 1.2rem;
+  }
+
+  .Footer hr {
+    color: #fff;
+    margin: 0.7rem 0;
+    width: 100%;
+    align-self: center;
+  }
+
+  .Footer-copyright {
+    color: #fff;
+    text-align: center;
+    font-size: 1.1rem;
+  }
+</style>

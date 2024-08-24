@@ -32,5 +32,9 @@
         ],
         "contact_me": "Contact Me",
         "expanded_menu": "Open Navigation"
+    },
+    "footer": {
+        "footer_message": "A FullStack Web Developer",
+        "footer_copyright": "© Copyright 2024. Made by Angel Chávez"
     }
 }

@@ -12,6 +12,7 @@ import ES from '../locales/es.json'
 const layout = props.lang === "es" ? ES.layout : EN.layout
 
 import Header from '~/components/header.astro';
+import Footer from '~/components/footer.astro'
 ---
 
 <!DOCTYPE html>
@@ -26,7 +27,8 @@ import Header from '~/components/header.astro';
 </head>
 <body>
     <Header lang={props.lang} />
-    <slot />    
+    <slot />
+    <Footer lang={props.lang} />
 </body>
 </html>
 
