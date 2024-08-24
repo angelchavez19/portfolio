@@ -57,6 +57,14 @@
                         }
                     ]
                 }
+            },
+            "about": {
+                "section": "About Me",
+                "texts": [
+                    "Hello! I'm Angel Chávez, a passionate web developer with one year of experience learning and creating projects. I'm passionate about creating projects that challenge me as a developer.",
+                    "My approach and work style focus on developing efficient and easy-to-read projects.",
+                    "I'm excited to continue growing and facing new challenges in the world of web development!"
+                ]
             }
         }
     },

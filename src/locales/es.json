@@ -57,6 +57,14 @@
                         }
                     ]
                 }
+            },
+            "about": {
+                "section": "Sobre Mí",
+                "texts": [
+                    "¡Hola! Soy Angel Chávez, un apasionado del desarrollo web con un año de experiencia aprendiendo y creando proyectos. Me apasiona crear proyectos que me desafien como desarrollador.",
+                    "Mi enfoque y estilo de trabajo se centran en desarrollar proyectos eficientes y fáciles de leer.",
+                    "¡Estoy emocionado por seguir creciendo y enfrentando nuevos desafíos en el mundo del desarrollo web!"
+                ]
             }
         }
     },

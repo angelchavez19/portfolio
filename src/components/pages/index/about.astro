@@ -1,0 +1,103 @@
+---
+interface Props {
+    lang: string
+}
+
+const props = Astro.props;
+
+import EN from '~/locales/en.json'
+import ES from '~/locales/es.json'
+const about = props.lang === 'es' ? ES.main.index.about : EN.main.index.about
+
+import Section from '~/components/section.astro'
+---
+
+<Section class="About" id="about" title={about.section}>
+  <div class="About-content">
+    <div class="About-image">
+        <img src="/me.jpeg" alt="Angel Chávez" />
+    </div>
+    <div class="About-about-text">
+        {about.texts.map((item) => <p>{item}</p>)}
+    </div>
+  </div>
+</Section>
+
+<style>
+  .About-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+  }
+
+  .About-content div {
+    background-color: #272727;
+  }
+
+  .About-image,
+  .About-image img {
+    border-radius: 50%;
+  }
+
+  .About-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 220px;
+    width: 220px;
+    min-height: 220px;
+    height: 220px;
+    overflow: hidden;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+  }
+
+  .About-image img {
+    width: 190px;
+    height: 190px;
+  }
+
+  .About-about-text {
+    width: calc(100% - 60px);
+    padding: 130px 30px 20px;
+    margin-top: 110px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .About-about-text p {
+    color: #fff;
+    font-size: 1.2rem;
+    width: 100%;
+  }
+
+  @media (min-width: 1000px) {
+    .About-image {
+      top: 0;
+      left: 0;
+    }
+
+    .About-about-text {
+      width: calc(100% - 220px - 50px);
+      min-height: calc(220px);
+      padding: 0 30px 0 130px;
+      margin-top: 0;
+      margin-left: 110px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+
+    .About-about-text p {
+      color: #fff;
+      font-size: 1.2rem;
+    }
+  }
+</style>

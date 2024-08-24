@@ -24,19 +24,24 @@ const switchLang = (locale: "es" | "en"): string => {
 
   return path
 };
+
+const getUrl = (locale: "en" | "es", path: string): string => {
+  const _path = getRelativeLocaleUrl(locale, path)
+  return _path.slice(0, _path.length - 1)
+}
 ---
 
 <div class="Header-container">
   <header class="Header">
     <div class="Header-icon">
-      <a href={getRelativeLocaleUrl(props.lang, '/')} title={header.icon}><Logo /></a>
+      <a href={getUrl(props.lang, '/')} title={header.icon}><Logo /></a>
     </div>
     <nav class="Header-menu">
       <menu class="Header-links">
         {
           header.links.map((item) => (
             <li>
-              <a href={getRelativeLocaleUrl(props.lang, item.href)}>
+              <a href={getUrl(props.lang, item.href)}>
                 { item.text }
               </a>
             </li>
@@ -54,7 +59,7 @@ const switchLang = (locale: "es" | "en"): string => {
             <li><a href={switchLang('es')}>Español</a></li>
           </menu>
         </div>
-        <a href={getRelativeLocaleUrl(props.lang, '#contact')} class="Button">
+        <a href={getUrl(props.lang, '/#contact')} class="Button">
           {header.contact_me}
         </a>
       </div>

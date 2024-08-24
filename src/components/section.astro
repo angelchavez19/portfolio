@@ -1,0 +1,33 @@
+---
+interface Props {
+  title: string
+  class: string
+  id: string
+}
+
+const props = Astro.props
+---
+
+<section class={props.class} id={props.id}>
+  <div class="TitleSection">
+    <h2>{props.title}</h2>
+  </div>
+  <slot />
+</section>
+
+<style>
+    .TitleSection {
+    background-color: #107f35;
+    padding: 0 1.5rem;
+    border-radius: 40px;
+    width: max-content;
+    margin-top: 110px;
+  }
+
+  .TitleSection h2 {
+    font-size: 1.3rem;
+    text-align: center;
+    color: #fff;
+    line-height: 2.5;
+  }
+</style>
