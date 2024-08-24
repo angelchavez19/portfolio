@@ -1,0 +1,337 @@
+---
+interface Props {
+  lang: "en" | "es"
+}
+
+const props = Astro.props;
+
+import EN from '~/locales/en.json'
+import ES from '~/locales/es.json'
+const hero = props.lang === 'es' ? ES.main.index.hero : EN.main.index.hero
+
+import { getRelativeLocaleUrl } from 'astro:i18n'
+import Blog from '~/components/icon/blog.astro'
+import Gmail from "~/components/icon/gmail.astro";
+import Linkedin from '~/components/icon/linkedin.astro'
+import Rocket from "~/components/icon/rocket.astro";
+import Youtube from '~/components/icon/youtube.astro'
+
+const heroIcons = [
+  { href: "https://github.com/angelchavez19", aria: "Github", icon: Gmail },
+  { href: "https://www.linkedin.com/in/angel-ch%C3%A1vez/", aria: "Linkedin", icon: Linkedin },
+  { href: getRelativeLocaleUrl(props.lang, 'blog-subscribe'), aria: "Blog", icon: Blog },
+  { href: "https://youtube.com/@caminoAsenior?feature=shared", aria: "Youtube", icon: Youtube },
+]
+---
+
+<section class="Hero" id="home">
+  <div class="Hero-main">
+    <div class="Hero-Greeting">
+      <p class="animation-rotate"><span>🖐</span></p>
+      <p>{hero.greeting}</p>
+    </div>
+    <div class="Hero-content">
+      <h1 set:html={hero.slogan} />
+      <p>{hero.description}</p>
+    </div>
+    <div class="Hero-links">
+      {
+        hero.hero_links.into.map((item) => (
+          <a href={getRelativeLocaleUrl(props.lang, item.href)} class="Button">
+            {item.text}
+          </a>
+        ))
+      }
+      {
+        hero.hero_links.extern.map((item) => (
+          <a href={item.href} class="Button" target="_blank" rel="noopener noreferrer">
+            {item.text}
+          </a>
+        ))
+      }
+    </div>
+  </div>
+  <div class="Hero-socialMedia">
+    <div class="Hero-rocket">
+      <Rocket />
+    </div>
+    <div class="Hero-socialIcons">
+      {
+       heroIcons.map((item) => (
+          <a
+            href={item.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            id={`${item.aria}-icon`}
+            title={item.aria}
+          >
+            <item.icon />
+          </a>
+        ))
+      }
+      <button id="Gmail-icon" type="button" aria-label="Gmail">
+        <Gmail />
+      </button>
+    </div>
+  </div>
+</section>
+
+<style is:inline>
+  .Hero-main,
+  .Hero-socialMedia {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .Hero-main {
+    gap: 1rem;
+  }
+
+  .Hero-Greeting {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    outline: 2px solid #14e956;
+    gap: 0.5rem;
+    padding: 0.5rem 0.8rem;
+    max-width: calc(100vw - 1.6rem);
+    border-radius: 50px;
+  }
+
+  .Hero-Greeting p {
+    color: #fff;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .Hero-Greeting p span {
+    font-size: 1.5rem;
+  }
+
+  .animation-rotate {
+    z-index: 0;
+    transform-origin: bottom center;
+    animation: greeting 0.5s 3;
+    animation-timing-function: cubic-bezier(0.1, -0.6, 0.2, 0);
+  }
+
+  @keyframes greeting {
+    25% {
+      transform: rotateZ(10deg);
+    }
+
+    75% {
+      transform: rotateZ(-10deg);
+    }
+  }
+
+  .Hero-content,
+  .Hero-socialMedia {
+    width: 100%;
+  }
+
+  .Hero-content h1 {
+    color: #fff;
+    font-size: 2rem;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  .Hero-content h1 span {
+    color: #14e956;
+  }
+
+  .Hero-content p {
+    color: #fff;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .Hero-links {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+
+  .Hero-rocket,
+  .Hero-rocket svg {
+    width: 250px;
+    height: 250px;
+  }
+
+  .Hero-rocket svg path {
+    z-index: 0;
+  }
+
+  .Hero-socialIcons {
+    width: 280px;
+    height: 40px;
+    position: relative;
+  }
+
+  .Hero-socialIcons a,
+  .Hero-socialIcons button {
+    position: absolute;
+  }
+
+  .Hero-socialIcons a,
+  .Hero-socialIcons button,
+  .Hero-socialIcons a svg,
+  .Hero-socialIcons button svg {
+    width: 40px;
+    height: 40px;
+    text-decoration: none;
+  }
+
+  .Hero-socialIcons button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  #Github-icon {
+    top: -60px;
+  }
+
+  #Linkedin-icon,
+  #Blog-icon {
+    top: -20px;
+  }
+
+  #Github-icon {
+    left: 20px;
+  }
+
+  #Linkedin-icon {
+    left: 60px;
+  }
+
+  #Blog-icon {
+    right: 60px;
+    fill: #050810;
+  }
+
+  #Youtube-icon {
+    top: 0;
+    left: calc(50% - 20px);
+  }
+
+  @media (min-width: 446px) {
+    .Hero-links {
+      flex-direction: row;
+    }
+  }
+
+  @media (min-width: 900px) {
+    .Hero {
+      flex-direction: row !important;
+      height: calc(100vh - 110px);
+      max-height: 700px;
+    }
+
+    .Hero-Greeting {
+      align-self: flex-start;
+    }
+
+    .Hero-content h1,
+    .Hero-content p {
+      text-align: start;
+    }
+
+    .Hero-links {
+      width: 100%;
+      justify-content: space-evenly;
+    }
+
+    .Hero-socialMedia {
+      flex: 1;
+    }
+  }
+
+  @media (min-width: 1000px) {
+    .Hero-main {
+      gap: 2.5rem;
+      max-width: 800px;
+    }
+
+    .Hero-socialMedia {
+      flex: 1;
+    }
+
+    .Hero-rocket,
+    .Hero-rocket svg {
+      width: 320px;
+      height: 320px;
+    }
+
+    .Hero-socialIcons {
+      width: 320px;
+      height: 60px;
+    }
+
+    .Hero-socialIcons a,
+    .Hero-socialIcons button,
+    .Hero-socialIcons a svg,
+    .Hero-socialIcons button svg {
+      width: 50px;
+      height: 50px;
+    }
+
+    #Github-icon {
+      top: -80px;
+    }
+
+    #Linkedin-icon,
+    #Blog-icon {
+      top: -30px;
+    }
+
+    #Github-icon {
+      left: 20px;
+    }
+
+    #Linkedin-icon {
+      left: 70px;
+    }
+
+    #Blog-icon {
+      right: 70px;
+    }
+
+    #Youtube-icon {
+      top: 0;
+      left: calc(50% - 25px);
+    }
+  }
+</style>
+
+<style is:global>
+  #Gmail-icon {
+    right: 20px;
+    top: -60px;
+  }
+  @media (min-width: 1000px) {
+    #Gmail-icon {
+      top: -80px;
+    }
+  }
+</style>
+
+<script>
+  const g = document.getElementById("Gmail-icon");
+  if (g)
+    g.addEventListener("click", () => {
+      navigator.clipboard
+        .writeText("infoangelchavez@gmail.com")
+        .then(() => {
+          alert("Copied");
+        })
+        .catch(() => {
+          alert("infoangelchavez@gmail.com");
+        });
+    });
+</script>

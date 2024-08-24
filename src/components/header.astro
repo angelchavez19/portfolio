@@ -16,10 +16,14 @@ import Logo from "~/components/icon/logo.astro"
 const switchLang = (locale: "es" | "en"): string => {
   const path = Astro.url.pathname
 
-  if (path.startsWith('/es/')) return  locale === "en" ? path.substring(3) : path
-  
-  return locale === "es" ? '/es' + path : path
-}
+  if (locale === "en")
+    return path.startsWith('/es/') ? path.substring(3) : path
+
+  if (locale === "es") 
+    return path.startsWith('/es/') ? path : `/es${path}`
+
+  return path
+};
 ---
 
 <div class="Header-container">
@@ -103,7 +107,7 @@ const switchLang = (locale: "es" | "en"): string => {
     justify-content: center;
     padding: 1.25rem 0;
     width: 100%;
-    background-color: #05081046;
+    background-color: #0508109c;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     z-index: 10000;

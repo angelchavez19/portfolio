@@ -1,0 +1,29 @@
+<svg viewBox="0 0 120 120">
+  <path
+    d="M70 87c.002 1.818-1.1 3.63-2.55 5.686-3.269 4.61-10.151 4.685-13.426-.005-1.24-1.78-2.557-4.695-2.557-5.69a1.024 1.024 45 0 0-1.84-.63 14.06 14.06 45 0 0-2.985 8.66c.004 7.796 14.105 22.634 14.105 22.634s14.11-14.846 14.107-22.642a14 14 45 0 0-2.988-8.666c-.631-.754-1.888-.323-1.866.653"
+    fill="#fcc400"
+    class="rocket-flame"></path>
+  <path
+    d="M84 84V31.662a7.93 7.93 0 0 0-48 0V84zM60 36a6.002 6.002 90 0 1 0 12 6.002 6.002 90 0 1 0-12"
+    fill="#fff"></path>
+  <path
+    d="M36 52.387C24.175 58 16 70.05 16 84h20zm48 0C95.825 58 104 70.05 104 84H84z"
+    fill="#e30e08"></path>
+</svg>
+
+<style>
+  svg .rocket-flame {
+    animation: flame 0.3s infinite;
+    animation-timing-function: cubic-bezier(0.1, -0.6, 0.2, 0);
+    animation-direction: alternate;
+  }
+
+  @keyframes flame {
+    0% {
+      transform: translateY(-20px);
+    }
+    100% {
+      transform: translateY(-12px);
+    }
+  }
+</style>

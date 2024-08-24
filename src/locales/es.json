@@ -33,6 +33,33 @@
         "contact_me": "Contáctame",
         "expanded_menu": "Abrir Navegación"
     },
+    "main": {
+        "index": {
+            "hero": {
+                "greeting": "Hola a todos! Soy Angel Chávez",
+                "slogan": "Soluciones Digitales a <span>Medida</span> para <span>Tu Negocio</span>",
+                "description": "En un mundo lleno de opciones, sé que cada negocio es único. Me encanta trabajar contigo para entender tus metas y desafíos, y crear una estrategia digital que se adapte perfectamente a tu marca. ¿Listo para llevar tu negocio al siguiente nivel? ¡Hablemos hoy mismo!",
+                "hero_links": {
+                    "into": [
+                        {
+                            "href": "/#contact",
+                            "text": "Contáctame"
+                        },
+                        {
+                            "href": "/projects",
+                            "text": "Mis proyectos"
+                        }
+                    ],
+                    "extern": [
+                        {
+                            "href": "https://drive.google.com/file/d/1_aW375FV9kgrhQ0kcxbFa5m85yLJTani/view?usp=sharing",
+                            "text": "Descargar CV"
+                        }
+                    ]
+                }
+            }
+        }
+    },
     "footer": {
         "footer_message": "Un Desarrollador Web FullStack",
         "footer_copyright": "© Copyright 2024. Hecho por Angel Chávez"

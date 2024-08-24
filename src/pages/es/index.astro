@@ -2,6 +2,10 @@
 import Base from '~/layouts/base.astro'
 
 const lang = "es"
+
+import Hero from '~/components/pages/index/hero.astro'
 ---
 
-<Base title="Mi Portafolio | Angel Chávez" lang={lang}></Base>
+<Base title="Mi Portafolio | Angel Chávez" lang={lang}>
+    <Hero lang={lang} />
+</Base>
