@@ -1,0 +1,31 @@
+---
+import type { ProjectI } from '~/interfaces/project'
+
+interface Props {
+  lang: "en" | "es"
+  projects: ProjectI[]
+}
+
+const props = Astro.props
+
+import Project from '~/components/project.astro'
+---
+
+<div class="Projects-container">
+  {
+    props.projects.map((project) => (
+      <Project lang={props.lang} project={project} />
+    ))
+  }
+</div>
+
+<style>
+    .Projects-container {
+        display: flex;
+        align-items: stretch;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        width: 100%;
+        gap: 1rem;
+    }
+</style>

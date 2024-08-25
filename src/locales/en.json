@@ -101,6 +101,13 @@
                         "image": "/service3.webp"
                     }
                 ]
+            },
+            "projects": {
+                "section": "Projects",
+                "more": {
+                    "href": "/projects",
+                    "text": "View more projects"
+                }
             }
         }
     },

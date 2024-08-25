@@ -1,0 +1,26 @@
+---
+interface Props {
+  lang: "en" | "es"
+}
+
+
+const props = Astro.props
+
+import EN from '~/locales/en.json'
+import ES from '~/locales/es.json'
+const projects = props.lang === 'es' ? ES.main.index.projects : EN.main.index.projects
+
+import pEN from '~/locales/index/projects/en.json'
+import pES from '~/locales/index/projects/es.json'
+const _projects = (props.lang === 'es' ? pES : pEN).slice(3)
+console.log(props.lang)
+import ProjectContainer from '~/components/projects.astro'
+import Section from '~/components/section.astro'
+---
+
+<Section class="Projects" title={projects.section}>
+  <ProjectContainer lang={props.lang} projects={_projects} />
+  <a href={projects.more.href} class="Button">
+    {projects.more.text} →
+  </a>
+</Section>
