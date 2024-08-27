@@ -1,24 +1,24 @@
 ---
 interface Props {
-  lang: "en" | "es"
+  lang: "en" | "es";
 }
 
 const props = Astro.props;
 
-import EN from '~/locales/en.json'
-import ES from '~/locales/es.json'
-const about = props.lang === 'es' ? ES.main.index.about : EN.main.index.about
+import EN from "~/locales/en.json";
+import ES from "~/locales/es.json";
+const about = props.lang === "es" ? ES.main.index.about : EN.main.index.about;
 
-import Section from '~/components/section.astro'
+import Section from "~/components/section.astro";
 ---
 
 <Section class="About" id="about" title={about.section}>
   <div class="About-content">
     <div class="About-image">
-        <img src="/me.jpeg" alt="Angel Chávez" />
+      <img src="/me.jpeg" alt="Angel Chávez" />
     </div>
     <div class="About-about-text">
-        {about.texts.map((item) => <p>{item}</p>)}
+      {about.texts.map((item) => <p>{item}</p>)}
     </div>
   </div>
 </Section>

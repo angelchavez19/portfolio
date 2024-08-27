@@ -1,14 +1,14 @@
 ---
 interface Props {
-  lang: string
+  lang: string;
 }
 
 const props = Astro.props;
 
-import EN from '~/locales/en.json'
-import ES from '~/locales/es.json'
+import EN from "~/locales/en.json";
+import ES from "~/locales/es.json";
 
-const footer = props.lang === 'es' ? ES.footer : EN.footer
+const footer = props.lang === "es" ? ES.footer : EN.footer;
 ---
 
 <div class="Footer-container">

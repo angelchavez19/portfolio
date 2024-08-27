@@ -1,27 +1,39 @@
 ---
 interface Props {
-  lang: "en" | "es"
+  lang: "en" | "es";
 }
 
 const props = Astro.props;
 
-import EN from '~/locales/en.json'
-import ES from '~/locales/es.json'
-const hero = props.lang === 'es' ? ES.main.index.hero : EN.main.index.hero
+import EN from "~/locales/en.json";
+import ES from "~/locales/es.json";
+const hero = props.lang === "es" ? ES.main.index.hero : EN.main.index.hero;
 
-import { getRelativeLocaleUrl } from 'astro:i18n'
-import Blog from '~/components/icon/blog.astro'
+import { getRelativeLocaleUrl } from "astro:i18n";
+import Blog from "~/components/icon/blog.astro";
 import Gmail from "~/components/icon/gmail.astro";
-import Linkedin from '~/components/icon/linkedin.astro'
+import Linkedin from "~/components/icon/linkedin.astro";
 import Rocket from "~/components/icon/rocket.astro";
-import Youtube from '~/components/icon/youtube.astro'
+import Youtube from "~/components/icon/youtube.astro";
 
 const heroIcons = [
   { href: "https://github.com/angelchavez19", aria: "Github", icon: Gmail },
-  { href: "https://www.linkedin.com/in/angel-ch%C3%A1vez/", aria: "Linkedin", icon: Linkedin },
-  { href: getRelativeLocaleUrl(props.lang, 'blog-subscribe'), aria: "Blog", icon: Blog },
-  { href: "https://youtube.com/@caminoAsenior?feature=shared", aria: "Youtube", icon: Youtube },
-]
+  {
+    href: "https://www.linkedin.com/in/angel-ch%C3%A1vez/",
+    aria: "Linkedin",
+    icon: Linkedin,
+  },
+  {
+    href: getRelativeLocaleUrl(props.lang, "blog-subscribe"),
+    aria: "Blog",
+    icon: Blog,
+  },
+  {
+    href: "https://youtube.com/@caminoAsenior?feature=shared",
+    aria: "Youtube",
+    icon: Youtube,
+  },
+];
 ---
 
 <section class="Hero" id="home">
@@ -44,7 +56,12 @@ const heroIcons = [
       }
       {
         hero.hero_links.extern.map((item) => (
-          <a href={item.href} class="Button" target="_blank" rel="noopener noreferrer">
+          <a
+            href={item.href}
+            class="Button"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {item.text}
           </a>
         ))
@@ -57,7 +74,7 @@ const heroIcons = [
     </div>
     <div class="Hero-socialIcons">
       {
-       heroIcons.map((item) => (
+        heroIcons.map((item) => (
           <a
             href={item.href}
             target="_blank"

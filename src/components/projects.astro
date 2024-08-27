@@ -1,14 +1,14 @@
 ---
-import type { ProjectI } from '~/interfaces/project'
+import type { ProjectI } from "~/interfaces/project";
 
 interface Props {
-  lang: "en" | "es"
-  projects: ProjectI[]
+  lang: "en" | "es";
+  projects: ProjectI[];
 }
 
-const props = Astro.props
+const props = Astro.props;
 
-import Project from '~/components/project.astro'
+import Project from "~/components/project.astro";
 ---
 
 <div class="Projects-container">
@@ -20,12 +20,12 @@ import Project from '~/components/project.astro'
 </div>
 
 <style>
-    .Projects-container {
-        display: flex;
-        align-items: stretch;
-        justify-content: space-evenly;
-        flex-wrap: wrap;
-        width: 100%;
-        gap: 1rem;
-    }
+  .Projects-container {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 1rem;
+  }
 </style>

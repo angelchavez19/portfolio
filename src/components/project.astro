@@ -65,10 +65,10 @@ const links = getLinks(project)
       ))}
     </div>
     <div class="Projects-project-content-links">
-      {links.map(({ icon: Icon, href, text }) => (
+      {links.map((link) => (
         <div class="Projects-project-content-links-link">
-          <Icon />
-          <a href={href} target="_blank" rel="noopener noreferrer">{text}</a>
+          <link.icon />
+          <a href={link.href} target="_blank" rel="noopener noreferrer">{link.text}</a>
         </div>
       ))}
     </div>
@@ -111,6 +111,7 @@ const links = getLinks(project)
 
   .Projects-project-content-technologies {
     display: flex;
+    flex-wrap: wrap;
     gap: 0.5rem;
   }
 

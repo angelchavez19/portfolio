@@ -1,16 +1,17 @@
 ---
 interface Props {
-  lang: "en" | "es"
+  lang: "en" | "es";
 }
 
-const props = Astro.props
+const props = Astro.props;
 
-import EN from '~/locales/en.json'
-import ES from '~/locales/es.json'
-const skills = props.lang === 'es' ? ES.main.index.skills : EN.main.index.skills
+import EN from "~/locales/en.json";
+import ES from "~/locales/es.json";
+const skills =
+  props.lang === "es" ? ES.main.index.skills : EN.main.index.skills;
 
-import { technicalSkills } from '~/locales/index/skills'
-import Section from '~/components/section.astro'
+import { technicalSkills } from "~/locales/index/skills";
+import Section from "~/components/section.astro";
 ---
 
 <Section class="Skills" id="skills" title={skills.section}>
@@ -24,16 +25,14 @@ import Section from '~/components/section.astro'
       technicalSkills.map((item) => (
         <div class={`Skills-${item.class}`}>
           <div class="Subtitle">
-            <h4>{ props.lang === 'es' ? item.subtitle.es : item.subtitle.en }</h4>
+            <h4>{props.lang === "es" ? item.subtitle.es : item.subtitle.en}</h4>
           </div>
           <div class="Skills-icons">
-            {
-              item.skills.map((icon) => (
-                <div class="Skills-icon" data-title={icon.title}>
-                  <icon.icon />
-                </div>
-              ))
-            }
+            {item.skills.map((icon) => (
+              <div class="Skills-icon" data-title={icon.title}>
+                <icon.icon />
+              </div>
+            ))}
           </div>
         </div>
       ))

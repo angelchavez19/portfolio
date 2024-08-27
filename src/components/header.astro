@@ -1,49 +1,48 @@
 ---
 interface Props {
-  lang: "es" | "en"
+  lang: "es" | "en";
 }
 
-const props = Astro.props
+const props = Astro.props;
 
-import EN from '~/locales/en.json'
-import ES from '~/locales/es.json'
-const header = props.lang === 'es' ? ES.header : EN.header
+import EN from "~/locales/en.json";
+import ES from "~/locales/es.json";
+const header = props.lang === "es" ? ES.header : EN.header;
 
-import { getRelativeLocaleUrl } from 'astro:i18n'
-import Lang from "~/components/icon/lang.astro"
-import Logo from "~/components/icon/logo.astro"
+import { getRelativeLocaleUrl } from "astro:i18n";
+import Lang from "~/components/icon/lang.astro";
+import Logo from "~/components/icon/logo.astro";
 
 const switchLang = (locale: "es" | "en"): string => {
-  const path = Astro.url.pathname
+  const path = Astro.url.pathname;
 
   if (locale === "en")
-    return path.startsWith('/es/') ? path.substring(3) : path
+    return path.startsWith("/es/") ? path.substring(3) : path;
 
-  if (locale === "es") 
-    return path.startsWith('/es/') ? path : `/es${path}`
+  if (locale === "es") return path.startsWith("/es/") ? path : `/es${path}`;
 
-  return path
+  return path;
 };
 
 const getUrl = (locale: "en" | "es", path: string): string => {
-  const _path = getRelativeLocaleUrl(locale, path)
-  return _path.slice(0, _path.length - 1)
-}
+  const _path = getRelativeLocaleUrl(locale, path);
+  return _path.slice(0, _path.length - 1);
+};
 ---
 
 <div class="Header-container">
   <header class="Header">
     <div class="Header-icon">
-      <a href={getUrl(props.lang, '/')} title={header.icon}><Logo /></a>
+      <a href={getRelativeLocaleUrl(props.lang, "/")} title={header.icon}
+        ><Logo /></a
+      >
     </div>
     <nav class="Header-menu">
       <menu class="Header-links">
         {
           header.links.map((item) => (
             <li>
-              <a href={getUrl(props.lang, item.href)}>
-                { item.text }
-              </a>
+              <a href={getUrl(props.lang, item.href)}>{item.text}</a>
             </li>
           ))
         }
@@ -55,11 +54,11 @@ const getUrl = (locale: "en" | "es", path: string): string => {
             <button type="button" id="header-lang">{props.lang}</button>
           </div>
           <menu class="Header-select">
-            <li><a href={switchLang('en')}>English</a></li>
-            <li><a href={switchLang('es')}>Español</a></li>
+            <li><a href={switchLang("en")}>English</a></li>
+            <li><a href={switchLang("es")}>Español</a></li>
           </menu>
         </div>
-        <a href={getUrl(props.lang, '/#contact')} class="Button">
+        <a href={getUrl(props.lang, "/#contact")} class="Button">
           {header.contact_me}
         </a>
       </div>

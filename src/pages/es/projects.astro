@@ -1,7 +1,11 @@
 ---
-import Base from '~/layouts/base.astro'
+import Base from "~/layouts/base.astro";
 
-const lang = "es"
+const lang = "es";
+
+import ProjectsPage from "~/components/pages/projects/page.vue";
 ---
 
-<Base title="Mis Proyectos | Angel Chávez" lang={lang}></Base>
+<Base title="Mis Proyectos | Angel Chávez" lang={lang}>
+  <ProjectsPage lang={lang} client:load />
+</Base>

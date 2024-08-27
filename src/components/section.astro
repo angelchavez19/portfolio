@@ -1,11 +1,11 @@
 ---
 interface Props {
-  title: string
-  class: string
-  id?: string
+  title: string;
+  class: string;
+  id?: string;
 }
 
-const props = Astro.props
+const props = Astro.props;
 ---
 
 <section class={props.class} id={props.id}>
@@ -16,7 +16,7 @@ const props = Astro.props
 </section>
 
 <style>
-    .TitleSection {
+  .TitleSection {
     background-color: #107f35;
     padding: 0 1.5rem;
     border-radius: 40px;
