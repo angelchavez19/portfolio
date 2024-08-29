@@ -1,0 +1,60 @@
+---
+interface Props {
+  lang: "en" | "es";
+}
+
+const props = Astro.props;
+
+import EN from "~/locales/en.json";
+import ES from "~/locales/es.json";
+const blog = props.lang === "es" ? ES.main.blog : EN.main.blog;
+
+import PostContainer from "./post-container.vue";
+---
+
+<section class="Subscribe">
+  <h1>{blog.subscribe.title}</h1>
+  <!-- <a href={blog.subscribe.call_action.href} class="Button">
+    {blog.subscribe.call_action.text}
+  </a> -->
+</section>
+<section class="Blog-container">
+  <PostContainer lang={props.lang} client:load />
+</section>
+
+<style>
+  .Subscribe {
+    gap: 1rem;
+  }
+
+  .Subscribe h1 {
+    color: #fff;
+    font-size: 2rem;
+  }
+
+  .Subscribe a {
+    width: calc(100% - 1rem);
+    text-align: center;
+  }
+
+  .Blog-container {
+    flex-wrap: wrap;
+    margin-top: 40px;
+    gap: 2rem;
+  }
+
+  @media (min-width: 650px) {
+    .Subscribe {
+      flex-direction: row;
+    }
+
+    .Subscribe h1 {
+      flex: 1;
+      text-align: center;
+    }
+
+    .Subscribe a {
+      width: auto;
+    }
+  }
+</style>

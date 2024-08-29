@@ -10,8 +10,8 @@ import ES from "~/locales/es.json";
 const projects =
   props.lang === "es" ? ES.main.index.projects : EN.main.index.projects;
 
-import pEN from "~/locales/index/projects/en.json";
-import pES from "~/locales/index/projects/es.json";
+import pEN from "~/locales/projects/en.json";
+import pES from "~/locales/projects/es.json";
 const _projects = (props.lang === "es" ? pES : pEN).slice(0, 3);
 
 import ProjectContainer from "~/components/projects.astro";

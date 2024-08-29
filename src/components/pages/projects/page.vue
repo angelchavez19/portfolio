@@ -33,9 +33,9 @@ import type { ProjectI } from "~/interfaces/project";
 const props = defineProps<{ lang: "es" | "en" }>();
 
 import { ref, type Ref } from "vue";
-import TechSkills from "~/locales/index/projects/tech.json";
-import AllProjectsEN from "~/locales/index/projects/en.json";
-import AllProjectsES from "~/locales/index/projects/es.json";
+import TechSkills from "~/locales/projects/tech.json";
+import AllProjectsEN from "~/locales/projects/en.json";
+import AllProjectsES from "~/locales/projects/es.json";
 import Project from "./project.vue";
 
 const allText = props.lang === "es" ? "Todos" : "All";

@@ -26,7 +26,7 @@
                 "text": "Proyectos"
             },
             {
-                "href": "/posts",
+                "href": "/blog",
                 "text": "Blog"
             }
         ],
@@ -108,6 +108,18 @@
                     "href": "/es/projects",
                     "text": "Ver más projectos"
                 }
+            }
+        },
+        "blog": {
+            "subscribe": {
+                "title": "Publicaciones",
+                "call_action": {
+                    "href": "/es/blog-subscribe",
+                    "text": "Suscribete"
+                }
+            },
+            "posts": {
+                "more": "Más"
             }
         }
     },

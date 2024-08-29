@@ -26,7 +26,7 @@
                 "text": "Projects"
             },
             {
-                "href": "/posts",
+                "href": "/blog",
                 "text": "Blog"
             }
         ],
@@ -68,19 +68,19 @@
             },
             "skills": {
                 "section": "Skills",
-                "soft_skill": "Habilidades Blandas",
+                "soft_skill": "Soft Skills",
                 "soft_skills": [
-                    "Gestión del Tiempo",
-                    "Resiliencia",
-                    "Innovación y creatividad",
-                    "Orientación al cliente",
-                    "Adaptabilidad",
-                    "Ética de trabajo",
-                    "Motivación",
-                    "Confianza",
-                    "Trabajo en equipo"
+                    "Time Management",
+                    "Resilience",
+                    "Innovation and Creativity",
+                    "Customer Orientation",
+                    "Adaptability",
+                    "Work Ethic",
+                    "Motivation",
+                    "Confidence",
+                    "Teamwork"
                 ],
-                "technical_skill": "Tecnologias que Utilizo"
+                "technical_skill": "Technologies I use"
             },
             "services": {
                 "section": "Services",
@@ -108,6 +108,18 @@
                     "href": "/projects",
                     "text": "View more projects"
                 }
+            }
+        },
+        "blog": {
+            "subscribe": {
+                "title": "Posts",
+                "call_action": {
+                    "href": "/blog-subscribe",
+                    "text": "Subscribe"
+                }
+            },
+            "posts": {
+                "more": "More"
             }
         }
     },

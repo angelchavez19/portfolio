@@ -1,0 +1,11 @@
+---
+import Base from "~/layouts/base.astro";
+
+const lang = "en";
+
+import Page from "~/components/pages/blog/blog.astro";
+---
+
+<Base title="My Blog | Angel Chávez" lang={lang}>
+  <Page lang={lang} />
+</Base>
