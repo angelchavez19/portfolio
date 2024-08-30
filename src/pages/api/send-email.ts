@@ -22,8 +22,8 @@ export const POST: APIRoute = async ({ params, request }) => {
   });
 
   mg.messages
-    .create("sandboxb7ebcfd7040e405fbbfc3acadf994a17.mailgun.org", {
-      from: `Excited User <mailgun@sandboxb7ebcfd7040e405fbbfc3acadf994a17.mailgun.org>`,
+    .create(import.meta.env.EMAIL_DOMAIN, {
+      from: `Excited User <${import.meta.env.EMAIL_FROM}>`,
       to: [import.meta.env.MY_EMAIL],
       subject: `New Email FROM '${body.name}' (${body.email})`,
       text: body.message,
