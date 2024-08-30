@@ -41,7 +41,7 @@ const SocialIcons = getSocialIcons(props.lang);
               rel="noopener noreferrer"
             >
               <link.icon />
-              <p>{link.text}</p>
+              <p>{props.lang === "es" ? link.esText : link.enText}</p>
             </a>
           ))
         }

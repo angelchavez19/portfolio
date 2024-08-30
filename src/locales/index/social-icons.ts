@@ -10,25 +10,29 @@ export const getSocialIcons = (lang: string) => {
       href: "https://github.com/angelchavez19",
       aria: "Github",
       icon: Github,
-      text: "Follow Me",
+      enText: "Follow Me",
+      esText: "Sígueme",
     },
     {
       href: "https://www.linkedin.com/in/angel-ch%C3%A1vez/",
       aria: "Linkedin",
       icon: Linkedin,
-      text: "Let's Connect",
+      enText: "Let's Connect",
+      esText: "Conectemos",
     },
     {
       href: getRelativeLocaleUrl(lang, "blog-subscribe"),
       aria: "Blog",
       icon: Blog,
-      text: "Subscribe",
+      enText: "Subscribe",
+      esText: "Suscribete",
     },
     {
       href: "https://youtube.com/@caminoAsenior?feature=shared",
       aria: "Youtube",
       icon: Youtube,
-      text: "Subscribe",
+      enText: "Subscribe",
+      esText: "Suscribete",
     },
   ];
 };

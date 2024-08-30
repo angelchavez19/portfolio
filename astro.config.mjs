@@ -6,7 +6,8 @@ import vue from "@astrojs/vue";
 export default defineConfig({
   i18n: {
     defaultLocale: "en",
-    locales: ["en", "es"]
+    locales: ["en", "es"],
   },
-  integrations: [vue({jsx: true})]
+  integrations: [vue({ jsx: true })],
+  output: "server",
 });
