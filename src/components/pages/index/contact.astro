@@ -1,0 +1,142 @@
+---
+interface Props {
+  lang: "en" | "es";
+}
+
+const props = Astro.props;
+
+import EN from "~/locales/en.json";
+import ES from "~/locales/es.json";
+const contact =
+  props.lang === "es" ? ES.main.index.contact : EN.main.index.contact;
+
+import { getSocialIcons } from "~/locales/index/social-icons";
+import GmailButton from "~/components/gmail.vue";
+import Section from "~/components/section.astro";
+import ContactForm from "~/components/pages/contact-form.vue";
+
+const SocialIcons = getSocialIcons(props.lang);
+---
+
+<Section title={contact.section} id="contact" class="Contact">
+  <div class="Contact-content">
+    <div class="Contact-form">
+      <div class="Subtitle">
+        <h3>{contact.contact_form.subtitle}</h3>
+      </div>
+      <ContactForm lang={props.lang} client:load />
+    </div>
+    <div class="Contact-socialMedia">
+      <div class="Subtitle">
+        <h3>{contact.social_media.subtitle}</h3>
+      </div>
+      <div class="Contact-socialMedia-container">
+        {
+          SocialIcons.map((link) => (
+            <a
+              href={link.href}
+              class="Contact-socialMedia-item"
+              aria-label={link.aria}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <link.icon />
+              <p>{link.text}</p>
+            </a>
+          ))
+        }
+        <GmailButton
+          lang={props.lang}
+          text={contact.social_media.gmail}
+          id="Gmail-icon-2"
+          client:load
+        />
+      </div>
+    </div>
+  </div>
+</Section>
+
+<style is:inline>
+  .Contact-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+  }
+
+  .Contact-form,
+  .Contact-socialMedia {
+    background-color: #272727;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    padding: 1rem 0;
+    gap: 1.5rem;
+  }
+
+  .Contact-form {
+    border-radius: 20px 20px 0 0;
+  }
+
+  .Contact-socialMedia {
+    border-radius: 0 0 20px 20px;
+  }
+
+  .Contact-socialMedia-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+    flex: 1;
+  }
+
+  .Contact-socialMedia-item,
+  #Gmail-icon-2 {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+  }
+
+  button#Gmail-icon-2 {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .Contact-socialMedia-item p,
+  #Gmail-icon-2 p {
+    color: #fff;
+    font-size: 1.2rem;
+    width: 125px;
+    font-family: "Inter", sans-serif;
+    text-align: start;
+  }
+
+  .Contact-socialMedia-item svg,
+  #Gmail-icon-2 svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .Contact-socialMedia-item .blog-icon-b {
+    fill: #272727;
+  }
+
+  @media (min-width: 700px) {
+    .Contact-content {
+      flex-direction: row;
+    }
+
+    .Contact-form {
+      border-radius: 20px 0 0 20px;
+    }
+
+    .Contact-socialMedia {
+      border-radius: 0 20px 20px 0;
+    }
+  }
+</style>

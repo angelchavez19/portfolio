@@ -10,30 +10,11 @@ import ES from "~/locales/es.json";
 const hero = props.lang === "es" ? ES.main.index.hero : EN.main.index.hero;
 
 import { getRelativeLocaleUrl } from "astro:i18n";
-import Blog from "~/components/icon/blog.astro";
-import Gmail from "~/components/icon/gmail.astro";
-import Linkedin from "~/components/icon/linkedin.astro";
+import { getSocialIcons } from "~/locales/index/social-icons";
+import GmailButton from "~/components/gmail.vue";
 import Rocket from "~/components/icon/rocket.astro";
-import Youtube from "~/components/icon/youtube.astro";
 
-const heroIcons = [
-  { href: "https://github.com/angelchavez19", aria: "Github", icon: Gmail },
-  {
-    href: "https://www.linkedin.com/in/angel-ch%C3%A1vez/",
-    aria: "Linkedin",
-    icon: Linkedin,
-  },
-  {
-    href: getRelativeLocaleUrl(props.lang, "blog-subscribe"),
-    aria: "Blog",
-    icon: Blog,
-  },
-  {
-    href: "https://youtube.com/@caminoAsenior?feature=shared",
-    aria: "Youtube",
-    icon: Youtube,
-  },
-];
+const heroIcons = getSocialIcons(props.lang);
 ---
 
 <section class="Hero" id="home">
@@ -86,9 +67,7 @@ const heroIcons = [
           </a>
         ))
       }
-      <button id="Gmail-icon" type="button" aria-label="Gmail">
-        <Gmail />
-      </button>
+      <GmailButton lang={props.lang} id="Gmail-icon" client:load />
     </div>
   </div>
 </section>
@@ -337,18 +316,3 @@ const heroIcons = [
     }
   }
 </style>
-
-<script>
-  const g = document.getElementById("Gmail-icon");
-  if (g)
-    g.addEventListener("click", () => {
-      navigator.clipboard
-        .writeText("infoangelchavez@gmail.com")
-        .then(() => {
-          alert("Copied");
-        })
-        .catch(() => {
-          alert("infoangelchavez@gmail.com");
-        });
-    });
-</script>

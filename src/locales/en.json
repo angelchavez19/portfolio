@@ -108,6 +108,17 @@
                     "href": "/projects",
                     "text": "View more projects"
                 }
+            },
+            "contact": {
+                "section": "Contact",
+                "contact_form": {
+                    "subtitle": "Send me an Email",
+                    "sendValue": "Send"
+                },
+                "social_media": {
+                    "subtitle": "My Social Media",
+                    "gmail": "Write to Me"
+                }
             }
         },
         "blog": {

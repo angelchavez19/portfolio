@@ -108,6 +108,17 @@
                     "href": "/es/projects",
                     "text": "Ver más projectos"
                 }
+            },
+            "contact": {
+                "section": "Contacto",
+                "contact_form": {
+                    "subtitle": "Enviame un Correo",
+                    "sendValue": "Enviar"
+                },
+                "social_media": {
+                    "subtitle": "Mis Redes Sociales",
+                    "gmail": "Escribeme"
+                }
             }
         },
         "blog": {

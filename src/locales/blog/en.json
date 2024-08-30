@@ -1,1 +1,72 @@
-[]
+[
+    {
+        "title": "My Tech Blog",
+        "content": [
+            {
+                "name": "Understanding Asynchronous JavaScript",
+                "description": "A deep dive into the world of asynchronous programming in JavaScript, covering callbacks, promises, and async/await.",
+                "slug": "understanding-asynchronous-javascript",
+                "date": "2024-08-01"
+            },
+            {
+                "name": "Getting Started with React",
+                "description": "An introductory guide to building user interfaces with React, a popular JavaScript library for building web applications.",
+                "slug": "getting-started-with-react",
+                "date": "2024-07-15"
+            },
+            {
+                "name": "CSS Grid Layout: A Complete Guide",
+                "description": "Learn everything you need to know about CSS Grid Layout, a powerful layout system for creating responsive web designs.",
+                "slug": "css-grid-layout-guide",
+                "date": "2024-06-20"
+            },
+            {
+                "name": "Building RESTful APIs with Node.js",
+                "description": "A comprehensive tutorial on creating RESTful APIs using Node.js and Express, covering everything from basic setup to advanced features.",
+                "slug": "building-restful-apis-with-nodejs",
+                "date": "2024-05-05"
+            },
+            {
+                "name": "A Beginner's Guide to TypeScript",
+                "description": "An introduction to TypeScript, a typed superset of JavaScript that adds static typing to the language, helping developers write more robust code.",
+                "slug": "beginners-guide-to-typescript",
+                "date": "2024-04-10"
+            }
+        ]
+    },
+    {
+        "title": "Developer Insights",
+        "content": [
+            {
+                "name": "Mastering Git and GitHub",
+                "description": "A comprehensive guide to version control using Git and GitHub, including basic commands, branching, merging, and collaboration workflows.",
+                "slug": "mastering-git-and-github",
+                "date": "2024-08-15"
+            },
+            {
+                "name": "Introduction to Python for Data Science",
+                "description": "An introductory article on using Python for data science, covering libraries like pandas, NumPy, and Matplotlib.",
+                "slug": "introduction-to-python-for-data-science",
+                "date": "2024-07-30"
+            },
+            {
+                "name": "Top 10 VS Code Extensions for Web Developers",
+                "description": "A curated list of the top 10 Visual Studio Code extensions that can enhance your web development workflow.",
+                "slug": "top-10-vs-code-extensions-for-web-developers",
+                "date": "2024-07-05"
+            },
+            {
+                "name": "Demystifying Docker: A Beginner's Guide",
+                "description": "Learn the basics of Docker, a tool that allows developers to package applications and their dependencies into a portable container.",
+                "slug": "demystifying-docker-beginners-guide",
+                "date": "2024-06-18"
+            },
+            {
+                "name": "JavaScript Performance Tips",
+                "description": "Explore a series of tips and best practices to optimize JavaScript code for better performance in web applications.",
+                "slug": "javascript-performance-tips",
+                "date": "2024-06-01"
+            }
+        ]
+    }
+]
