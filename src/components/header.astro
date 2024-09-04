@@ -10,19 +10,8 @@ import ES from "~/locales/es.json";
 const header = props.lang === "es" ? ES.header : EN.header;
 
 import { getRelativeLocaleUrl } from "astro:i18n";
-import Lang from "~/components/icon/lang.astro";
+import SelectLang from "~/components/select-lang.vue";
 import Logo from "~/components/icon/logo.astro";
-
-const switchLang = (locale: "es" | "en"): string => {
-  const path = Astro.url.pathname;
-
-  if (locale === "en")
-    return path.startsWith("/es/") ? path.substring(3) : path;
-
-  if (locale === "es") return path.startsWith("/es/") ? path : `/es${path}`;
-
-  return path;
-};
 
 const getUrl = (locale: "en" | "es", path: string): string => {
   const _path = getRelativeLocaleUrl(locale, path);
@@ -48,16 +37,7 @@ const getUrl = (locale: "en" | "es", path: string): string => {
         }
       </menu>
       <div class="Header-config">
-        <div class="Header-selectLanguage">
-          <div>
-            <Lang />
-            <button type="button" id="header-lang">{props.lang}</button>
-          </div>
-          <menu class="Header-select">
-            <li><a href={switchLang("en")}>English</a></li>
-            <li><a href={switchLang("es")}>Español</a></li>
-          </menu>
-        </div>
+        <SelectLang lang={props.lang} client:only />
         <a href={getUrl(props.lang, "/#contact")} class="Button">
           {header.contact_me}
         </a>
@@ -75,16 +55,6 @@ const getUrl = (locale: "en" | "es", path: string): string => {
     '<svg viewBox="0 0 448 512" fill="#fff"><path d="M0 96c0-17.7 14.3-32 32-32h384c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32m0 160c0-17.7 14.3-32 32-32h384c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32m448 160c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32h384c17.7 0 32 14.3 32 32"/></svg>';
   const iconCross =
     '<svg viewBox="0 0 16 16"><path fill="#fff" d="M15.854 12.854 11 8l4.854-4.854a.503.503 0 0 0 0-.707L13.561.146a.5.5 0 0 0-.707 0L8 5 3.146.146a.5.5 0 0 0-.707 0L.146 2.439a.5.5 0 0 0 0 .707L5 8 .146 12.854a.5.5 0 0 0 0 .707l2.293 2.293a.5.5 0 0 0 .707 0L8 11l4.854 4.854a.5.5 0 0 0 .707 0l2.293-2.293a.5.5 0 0 0 0-.707"/></svg>';
-
-  const headerSelect = document.getElementsByClassName("Header-select")[0];
-  const headerLang = document.getElementById("header-lang");
-
-  if (headerLang)
-    headerLang.addEventListener("click", () => {
-      if (headerSelect.ariaExpanded)
-        headerSelect.removeAttribute("aria-expanded");
-      else headerSelect.ariaExpanded = "true";
-    });
 
   const headerMenu = document.getElementsByClassName("Header-menu")[0];
   const expandedMenu = document.getElementById("expand-menu");
@@ -176,62 +146,6 @@ const getUrl = (locale: "en" | "es", path: string): string => {
     align-self: center;
   }
 
-  .Header-selectLanguage {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .Header-selectLanguage div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.4rem;
-  }
-
-  .Header-selectLanguage div svg {
-    width: 20px;
-    height: 20px;
-  }
-
-  #header-lang {
-    background-color: transparent;
-    border: none;
-    color: #fff;
-    font-size: 1.2rem;
-    text-transform: uppercase;
-  }
-
-  .Header-select {
-    display: none;
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 0;
-    background: #272727;
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
-    outline: 1px solid #454545;
-  }
-
-  .Header-select[aria-expanded="true"] {
-    display: flex;
-  }
-
-  .Header-select li {
-    list-style: none;
-    background-color: #272727;
-  }
-
-  .Header-select li a {
-    font-size: 1.2rem;
-    color: #fff;
-    text-decoration: none;
-  }
-
   .Header-active-menu {
     flex: 1;
     display: flex;
@@ -274,19 +188,6 @@ const getUrl = (locale: "en" | "es", path: string): string => {
 
     .Header-config {
       gap: 1rem;
-    }
-
-    .Header-select {
-      display: none;
-      position: absolute;
-      top: 60px;
-      left: auto;
-      right: 0;
-      width: 200%;
-    }
-
-    .Header-select[aria-expanded="true"] {
-      display: flex;
     }
 
     .Header-active-menu {

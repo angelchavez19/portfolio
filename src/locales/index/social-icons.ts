@@ -1,5 +1,5 @@
-// import { getRelativeLocaleUrl } from "astro:i18n";
-// import Blog from "~/components/icon/blog.astro";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import Blog from "~/components/icon/blog.astro";
 import Github from "~/components/icon/github.astro";
 import Linkedin from "~/components/icon/linkedin.astro";
 import Youtube from "~/components/icon/youtube.astro";
@@ -20,13 +20,13 @@ export const getSocialIcons = (lang: string) => {
       enText: "Let's Connect",
       esText: "Conectemos",
     },
-    // {
-    //   href: getRelativeLocaleUrl(lang, "blog"),
-    //   aria: "Blog",
-    //   icon: Blog,
-    //   enText: "Subscribe",
-    //   esText: "Suscribete",
-    // },
+    {
+      href: getRelativeLocaleUrl(lang, "blog"),
+      aria: "Blog",
+      icon: Blog,
+      enText: "Explore",
+      esText: "Explora",
+    },
     {
       href: "https://youtube.com/@caminoAsenior?feature=shared",
       aria: "Youtube",
