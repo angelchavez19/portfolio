@@ -1,5 +1,6 @@
 import { defineConfig } from "astro/config";
 import vue from "@astrojs/vue";
+import vercel from "@astrojs/vercel/serverless";
 
 import mdx from "@astrojs/mdx";
 
@@ -16,4 +17,5 @@ export default defineConfig({
     mdx(),
   ],
   output: "server",
+  adapter: vercel(),
 });
