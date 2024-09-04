@@ -22,7 +22,7 @@ This portfolio showcases my work as a full-stack developer. It includes projects
 
 ## Technologies Used
 
-- **Frontend:** Astro
+- **Frontend:** Astro & Vue
 - **Version Control:** Git, GitHub
 - **Deployment:** Vercel
 
