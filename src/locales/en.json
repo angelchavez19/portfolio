@@ -88,17 +88,17 @@
                     {
                         "title": "Development of web applications",
                         "content": "Custom web application development for your business or venture.",
-                        "image": "/service1.webp"
+                        "image": "https://raw.githubusercontent.com/angelchavez19/portfolio/refs/heads/main/public/service1.webp"
                     },
                     {
                         "title": "Development of static websites",
                         "content": "Development of elegant and efficient static websites using static site generators, ensuring a smooth and high-quality user experience.",
-                        "image": "/service2.webp"
+                        "image": "https://raw.githubusercontent.com/angelchavez19/portfolio/refs/heads/main/public/service2.webp"
                     },
                     {
                         "title": "Website maintenance",
                         "content": "Maintenance for existing websites, including content updates, performance optimization, error correction, and security.",
-                        "image": "/service3.webp"
+                        "image": "https://raw.githubusercontent.com/angelchavez19/portfolio/refs/heads/main/public/service3.webp"
                     }
                 ]
             },

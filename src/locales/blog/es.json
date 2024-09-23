@@ -1,1 +1,13 @@
-[]
+[
+    {
+        "title": "Guias Técnicas",
+        "content": [
+            {
+                "name": "Acortador de URLs",
+                "description": "Como funciona un acortador de URLs",
+                "slug": "use-case-url-shortener",
+                "date": "09-22-2024"
+            }
+        ]
+    }
+]

@@ -1,76 +1,78 @@
 ---
-import type { ProjectI } from '../interfaces/project'
-import Blog from '~/components/icon/blog.astro'
-import Github from '~/components/icon/github.astro'
-import Demo from '~/components/icon/demo.astro'
-import Web from '~/components/icon/web.astro'
+import type { ProjectI } from "../interfaces/project";
+import Blog from "~/components/icon/blog.astro";
+import Github from "~/components/icon/github.astro";
+import Demo from "~/components/icon/demo.astro";
+import Web from "~/components/icon/web.astro";
 
 interface Props {
-  project: ProjectI
-  lang: string
+  project: ProjectI;
+  lang: string;
 }
 
-const { project, lang } = Astro.props
+const { project, lang } = Astro.props;
 
 const getLinks = (project: ProjectI) => {
-  const links = []
+  const links = [];
 
   if (project.blog_link) {
     links.push({
       icon: Blog,
       href: `/${lang === "ES" ? "es" : ""}/${project.blog_link}`,
-      text: 'Blog',
-    })
+      text: "Blog",
+    });
   }
 
   if (project.github_link) {
     links.push({
       icon: Github,
       href: project.github_link,
-      text: 'Repo',
-    })
+      text: "Repo",
+    });
   }
 
   if (project.demo_link) {
     links.push({
       icon: Demo,
       href: project.demo_link,
-      text: 'Demo',
-    })
+      text: "Demo",
+    });
   }
 
   if (project.website_link) {
     links.push({
       icon: Web,
       href: project.website_link,
-      text: 'Web',
-    })
+      text: "Web",
+    });
   }
 
-  return links
-}
+  return links;
+};
 
-const links = getLinks(project)
+const links = getLinks(project);
 ---
 
 <div class="Projects-project">
   <img src={project.image} alt={project.name} />
   <div class="Projects-project-content">
-    <p>{project.date} • {project.duration}</p>
+    <p>{project.date} {project.duration ? "•" : ""} {project.duration}</p>
     <h3>{project.name}</h3>
     <p>{project.description}</p>
     <div class="Projects-project-content-technologies">
-      {project.technologies.map((tech) => (
-        <p>{tech}</p>
-      ))}
+      {project.technologies.map((tech) => <p>{tech}</p>)}
     </div>
     <div class="Projects-project-content-links">
-      {links.map((link) => (
-        <div class="Projects-project-content-links-link">
-          <link.icon />
-          <a href={link.href} target="_blank" rel="noopener noreferrer">{link.text}</a>
-        </div>
-      ))}
+      {
+        links.map((link) => (
+          <div class="Projects-project-content-links-link">
+            <link.icon />
+            <a href={link.href} target="_blank" rel="noopener noreferrer">
+              {link.text}
+            </a>
+          </div>
+        ))
+      }
     </div>
   </div>
 </div>
@@ -135,7 +137,9 @@ const links = getLinks(project)
     align-items: center;
     gap: 0.5rem;
   }
+</style>
 
+<style is:global>
   .Projects-project-content-links-link svg {
     width: 28px;
     height: 28px;

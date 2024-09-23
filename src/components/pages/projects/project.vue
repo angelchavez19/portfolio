@@ -2,7 +2,10 @@
   <div class="Projects-project">
     <img :src="project.image" :alt="project.name" />
     <div class="Projects-project-content">
-      <p>{{ project.date }} • {{ project.duration }}</p>
+      <p>
+        {{ project.date }} {{ project.duration ? "•" : "" }}
+        {{ project.duration }}
+      </p>
       <h3>{{ project.name }}</h3>
       <p>{{ project.description }}</p>
       <div class="Projects-project-content-technologies">

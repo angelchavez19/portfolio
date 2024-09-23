@@ -35,8 +35,8 @@ import AllBlogsES from "~/locales/blog/es.json";
 const allBlogs: BlogI[] = props.lang === "es" ? AllBlogsES : AllBlogsEN;
 
 const getHrefForSlug = (slug: string) => {
-  if (props.lang === "es") return `/es/${slug}`;
-  return `/${slug}`;
+  if (props.lang === "es") return `/es/post/${slug}`;
+  return `/post/${slug}`;
 };
 
 const formatDate = (date: string) => {

@@ -1,1 +1,32 @@
-[]
+[
+    {
+        "name": "Clon de Google Drive",
+        "description": "Un clon minimalista de Google Drive.",
+        "blog_link": "",
+        "github_link": "https://github.com/angelchavez19/google-drive-clone-v1",
+        "demo_link": "https://youtu.be/cA-ixmOaHZY",
+        "website_link": "",
+        "image": "https://raw.githubusercontent.com/angelchavez19/google-drive-clone-v1/refs/heads/main/google-drive-clone-v1.png",
+        "technologies": [
+            "FastAPI",
+            "Vue.js",
+            "SASS"
+        ],
+        "date": "19 de Marzo, 2024",
+        "duration": "40 horas"
+    },
+    {
+        "name": "Acortador de URLs",
+        "description": "Esta es la implementación de un servicio para acortar URLs.",
+        "blog_link": "",
+        "github_link": "https://github.com/angelchavez19/url-shortener",
+        "demo_link": "",
+        "website_link": "",
+        "image": "https://raw.githubusercontent.com/angelchavez19/url-shortener/refs/heads/main/url-shortener.jpg",
+        "technologies": [
+            "NestJS"
+        ],
+        "date": "16 de Septiembre, 2024",
+        "duration": ""
+    }
+]

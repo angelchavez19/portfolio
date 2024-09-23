@@ -1,5 +1,6 @@
 [
     "Vue.js",
     "SASS",
-    "FastAPI"
+    "FastAPI",
+    "NestJS"
 ]

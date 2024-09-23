@@ -1,1 +1,13 @@
-[]
+[
+    {
+        "title": "Technical Guides",
+        "content": [
+            {
+                "name": "URL Shortener",
+                "description": "How a URL shortener works",
+                "slug": "tech-guides-url-shortener",
+                "date": "09-22-2024"
+            }
+        ]
+    }
+]
